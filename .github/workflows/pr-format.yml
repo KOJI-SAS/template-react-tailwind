@@ -1,0 +1,14 @@
+name: Pull Request Format
+
+on:
+  pull_request:
+    types: [opened, edited, reopened, synchronize]
+
+jobs:
+  triage:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check PR title format
+      uses: amannn/action-semantic-pull-request@v1.1.1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
